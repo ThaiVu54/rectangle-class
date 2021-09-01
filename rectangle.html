@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rectangle</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="200" style="border: 1px solid"></canvas>
+<script>
+    class Rectangle{
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        createArea(){
+            return this.height*this.width;
+        }
+        createPerimeter(){
+            return (this.width+this.height)*2
+        }
+        drawCanvas(){
+            let c= document.getElementById("myCanvas");
+            let ctx = c.getContext("2d");
+            ctx.beginPath();
+            // ctx.arc(100, 50, 35, 0, 2*Math.PI);
+            ctx.fillStyle="blue";
+            ctx.fillRect(10, 10, this.width, this.height);
+            ctx.fill();
+        }
+    }
+    let rectangle = new Rectangle(200,100)
+    alert("dien tich hinh chu nhat: "+rectangle.createArea())
+    alert("chu vi hinh chu nhat: "+rectangle.createPerimeter())
+    rectangle.drawCanvas()
+</script>
+</body>
+</html>
